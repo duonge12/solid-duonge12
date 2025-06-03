@@ -1,32 +1,25 @@
-const handleMenuToggle = () => {
-	const button = document
-		.querySelector("header .menu-toggle")
-		.addEventListener("click", () => {
-			const navListClass = document.querySelector("header .navList").classList;
-			if (navListClass.contains("invisible")) {
-				navListClass.remove("invisible");
-				navListClass.add("visible");
-			} else {
-				navListClass.add("invisible");
-				navListClass.remove("visible");
-			}
-		});
+const handleDashButtonClick = () => {
+	const dashButton = document.querySelector(".dashes-button");
+	const navContainer = document.querySelector(".nav-container");
+	dashButton.addEventListener("click", () => {
+		navContainer.classList.toggle("up");
+	});
 };
-const themeToggle = () => {
-	const buttons = document
-		.querySelectorAll("header .theme-toggle")
-		.forEach((button) => {
-			button.addEventListener("click", () => {
-				const body = document.querySelector("body");
-				if (body.classList.contains("dark")) {
-					body.classList.remove("dark");
-					body.classList.add("light");
-				} else {
-					body.classList.remove("light");
-					body.classList.add("dark");
-				}
-			});
-		});
+const handleDropDownButtonClick = () => {
+	const dropDownButton = document.querySelector(".dropdown-container");
+	dropDownButton.addEventListener("click", () => {
+		dropDownButton.classList.toggle("up");
+	});
 };
-handleMenuToggle();
-themeToggle();
+const handleToggleThemeClick = () => {
+	const toggleThemeButtons = document.querySelectorAll(".toggle-theme");
+	const body = document.getElementsByTagName("body")[0];
+	toggleThemeButtons.forEach((button) => {
+		button.addEventListener("click", () => {
+			body.classList.toggle("dark");
+		});
+	});
+};
+handleDashButtonClick();
+handleDropDownButtonClick();
+handleToggleThemeClick();

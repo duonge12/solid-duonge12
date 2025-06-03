@@ -22,3 +22,19 @@ const handleLoadComponent = async (href, script) => {
 		}
 	}
 };
+const handleLoadHeader = async (href, script) => {
+	const tempContainer = document.createElement("div");
+	const response = await fetch(href);
+	if (!response.ok) {
+		console.error("Failed to load header:", response.statusText);
+	} else {
+		const result = await response.text();
+		tempContainer.innerHTML = result;
+		const header = tempContainer.querySelector("header");
+		document.body.insertBefore(header, document.body.firstChild);
+		if (script) {
+			const scriptText = await handleScript(script);
+			eval(scriptText);
+		}
+	}
+};

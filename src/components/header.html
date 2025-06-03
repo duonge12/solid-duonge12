@@ -21,53 +21,130 @@
 					src="../images/logo/logo-light.svg"
 				/>
 			</a>
-			<button class="block xl:hidden text-black dark:text-white">
+			<button class="block dashes-button xl:hidden text-black dark:text-white">
 				<i class="fa fa-bars"></i>
 			</button>
 		</div>
 		<div
-			class="invisible h-0 w-full xl:items-center xl:justify-between xl:visible xl:flex xl:h-auto xl:w-full"
+			class="nav-container shadow dark:shadow-none dark:bg-blacksection bg-white"
 		>
 			<nav>
-				<ul class="flex flex-col gap-5 xl:flex-row xl:items-center xl:gap-10">
+				<ul class="nav-list">
 					<li>
 						<a
 							class="text-primary hover:text-primary"
 							href="/"
-							>Home</a
 						>
+							Home
+						</a>
 					</li>
 					<li>
 						<a
 							class="hover:text-primary"
 							href="/#features"
-							>Features</a
 						>
+							Features
+						</a>
 					</li>
 					<li>
 						<a
 							class="hover:text-primary"
 							href="/blog"
-							>Blog</a
 						>
+							Blog
+						</a>
 					</li>
 					<li>
 						<a
 							class="hover:text-primary"
 							href="/docs"
-							>Docs</a
 						>
+							Docs
+						</a>
 					</li>
-					
+					<li class="dropdown-container">
+						<button
+							class="flex cursor-pointer items-center justify-between gap-3 hover:text-primary"
+						>
+							<span>Pages</span>
+							<span class="page-icon-down">
+								<i class="fa fa-chevron-down"></i>
+							</span>
+							<span class="page-icon-up">
+								<i class="fa fa-chevron-up"></i>
+							</span>
+						</button>
+						<ul
+							class="dropdown shadow dark:shadow-none bg-white dark:bg-[#181C31]"
+						>
+							<li class="hover:text-primary"><a href="/blog">Blog Grid</a></li>
+							<li class="hover:text-primary">
+								<a href="/auth/signin">Sign In</a>
+							</li>
+							<li class="hover:text-primary">
+								<a href="/auth/signup">Sign Up</a>
+							</li>
+							<li class="hover:text-primary"><a href="/docs">Docs</a></li>
+							<li class="hover:text-primary"><a href="/support">Support</a></li>
+							<li class="hover:text-primary"><a href="/error">404</a></li>
+						</ul>
+					</li>
 					<li>
 						<a
 							class="hover:text-primary"
 							href="/support"
-							>Support</a
 						>
+							Support
+						</a>
 					</li>
 				</ul>
 			</nav>
+			<div class="nav-buttons">
+				<div class="flex items-center gap-6">
+					<button class="hidden md:inline-block">
+						<i class="fa fa-search"></i>
+					</button>
+					<button class="toggle-theme hidden lg:inline-block">
+						<span class="block dark:hidden">
+							<img
+								src="../images/icon-sun.svg"
+								alt="sun"
+							/>
+						</span>
+						<span class="hidden dark:block">
+							<img
+								src="../images/icon-moon.svg"
+								alt="moon"
+							/>
+						</span>
+					</button>
+					<a
+						class=""
+						href="/auth/signin"
+					>
+						Sign In
+					</a>
+					<button
+						class="px-[30px] py-[10px] text-white bg-primary rounded-full"
+					>
+						Sign Up
+					</button>
+				</div>
+				<button class="toggle-theme inline-block lg:hidden">
+					<span class="block dark:hidden">
+						<img
+							src="../images/icon-sun.svg"
+							alt="sun"
+						/>
+					</span>
+					<span class="hidden dark:block">
+						<img
+							src="../images/icon-moon.svg"
+							alt="moon"
+						/>
+					</span>
+				</button>
+			</div>
 		</div>
 	</div>
 </header>

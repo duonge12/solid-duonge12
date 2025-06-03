@@ -1,4 +1,7 @@
 {
     "useTabs": true,
-    "singleAttributePerLine": true
+    "singleAttributePerLine": true,
+    "bracketSameLine": false,
+    "htmlWhitespaceSensitivity": "ignore"
+    
 }

@@ -7,12 +7,13 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-black: #000;
+    --color-black: #181c31;
     --color-white: #fff;
     --spacing: 0.25rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-primary: #006BFF;
+    --color-primary: #006bff;
+    --color-blacksection: #1c2136;
   }
 }
 @layer base {
@@ -161,12 +162,6 @@
   }
 }
 @layer utilities {
-  .invisible {
-    visibility: hidden;
-  }
-  .visible {
-    visibility: visible;
-  }
   .relative {
     position: relative;
   }
@@ -197,8 +192,8 @@
   .hidden {
     display: none;
   }
-  .h-0 {
-    height: calc(var(--spacing) * 0);
+  .inline-block {
+    display: inline-block;
   }
   .w-full {
     width: 100%;
@@ -206,8 +201,8 @@
   .transform {
     transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
   }
-  .flex-col {
-    flex-direction: column;
+  .cursor-pointer {
+    cursor: pointer;
   }
   .items-center {
     align-items: center;
@@ -215,8 +210,17 @@
   .justify-between {
     justify-content: space-between;
   }
-  .gap-5 {
-    gap: calc(var(--spacing) * 5);
+  .gap-3 {
+    gap: calc(var(--spacing) * 3);
+  }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
+  }
+  .bg-primary {
+    background-color: var(--color-primary);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -224,14 +228,23 @@
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
   }
+  .px-\[30px\] {
+    padding-inline: 30px;
+  }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
+  }
+  .py-\[10px\] {
+    padding-block: 10px;
   }
   .text-black {
     color: var(--color-black);
   }
   .text-primary {
     color: var(--color-primary);
+  }
+  .text-white {
+    color: var(--color-white);
   }
   .shadow {
     --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -244,14 +257,24 @@
       }
     }
   }
+  .md\:inline-block {
+    @media (width >= 768px) {
+      display: inline-block;
+    }
+  }
   .md\:px-8 {
     @media (width >= 768px) {
       padding-inline: calc(var(--spacing) * 8);
     }
   }
-  .xl\:visible {
-    @media (width >= 1280px) {
-      visibility: visible;
+  .lg\:hidden {
+    @media (width >= 1024px) {
+      display: none;
+    }
+  }
+  .lg\:inline-block {
+    @media (width >= 1024px) {
+      display: inline-block;
     }
   }
   .xl\:flex {
@@ -264,24 +287,9 @@
       display: none;
     }
   }
-  .xl\:h-auto {
-    @media (width >= 1280px) {
-      height: auto;
-    }
-  }
   .xl\:w-1\/4 {
     @media (width >= 1280px) {
       width: calc(1/4 * 100%);
-    }
-  }
-  .xl\:w-full {
-    @media (width >= 1280px) {
-      width: 100%;
-    }
-  }
-  .xl\:flex-row {
-    @media (width >= 1280px) {
-      flex-direction: row;
     }
   }
   .xl\:items-center {
@@ -292,11 +300,6 @@
   .xl\:justify-between {
     @media (width >= 1280px) {
       justify-content: space-between;
-    }
-  }
-  .xl\:gap-10 {
-    @media (width >= 1280px) {
-      gap: calc(var(--spacing) * 10);
     }
   }
   .\32 xl\:px-0 {
@@ -314,14 +317,30 @@
       display: none;
     }
   }
+  .dark\:bg-\[\#181C31\] {
+    &:where(.dark, .dark *) {
+      background-color: #181C31;
+    }
+  }
   .dark\:bg-black {
     &:where(.dark, .dark *) {
       background-color: var(--color-black);
     }
   }
+  .dark\:bg-blacksection {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-blacksection);
+    }
+  }
   .dark\:text-white {
     &:where(.dark, .dark *) {
       color: var(--color-white);
+    }
+  }
+  .dark\:shadow-none {
+    &:where(.dark, .dark *) {
+      --tw-shadow: 0 0 #0000;
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
 }
@@ -332,6 +351,105 @@ html {
 .container {
   margin-inline: auto;
   max-width: 86.875rem;
+}
+.nav-container {
+  max-height: 0px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+  transition: all 0.5s ease-in-out;
+}
+.nav-container:where(.nav-container.up) {
+  overflow: visible;
+  max-height: 500px;
+  padding: 1.875rem;
+  margin: 1rem 0;
+}
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.page-icon-up {
+  display: none;
+}
+.dropdown-container:hover .page-icon-up, .dropdown-container.up .page-icon-up {
+  display: inline;
+}
+.page-icon-down {
+  display: inline;
+}
+.dropdown-container:hover .page-icon-down, .dropdown-container.up .page-icon-down {
+  display: none;
+}
+.dropdown-container {
+  position: relative;
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  padding: 1.25rem 2rem;
+  margin-top: 0.5rem;
+  border-radius: 0.375rem;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.dropdown-container:hover .dropdown, .dropdown-container.up .dropdown {
+  display: flex;
+}
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 1.75rem;
+  justify-content: space-between;
+}
+@media screen and (min-width: 1280px) {
+  .nav-container {
+    display: flex;
+    max-height: 200px;
+    box-shadow: none;
+    overflow: visible;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+  }
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .dropdown {
+    width: 250px;
+    margin-top: 0;
+    transform: translateY(1rem);
+  }
+  .dropdown::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 2.5rem;
+    width: 14px;
+    height: 14px;
+    border-left: 1px;
+    border-top: 1px;
+    border-style: solid;
+    border-color: #eeeeee;
+    background-color: inherit;
+    transform: rotate(45deg);
+    z-index: 0;
+  }
+  .dark .dropdown::before {
+    border-color: #2d2f40;
+  }
+  .dark .dropdown {
+    border: 1px solid #2d2f40;
+  }
+  .nav-buttons {
+    display: inline-block;
+    margin-top: 0;
+  }
 }
 @property --tw-rotate-x {
   syntax: "*";
