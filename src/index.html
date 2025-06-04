@@ -20,9 +20,11 @@
 	<body class="bg-white dark:bg-blacksection">
 		<script src="js/loadComponent.js"></script>
 		<script>
-			handleLoadComponent("components/header.html", "js/header.js");
-			handleLoadComponent("components/banner.html");
-			handleLoadComponent("components/brand-banner.html");
+			handleLoadDOM([
+				() => handleLoadComponent("components/header.html", "js/header.js"),
+				() => handleLoadComponent("components/banner.html"),
+				() => handleLoadComponent("components/brand-banner.html"),
+			]);
 		</script>
 	</body>
 </html>

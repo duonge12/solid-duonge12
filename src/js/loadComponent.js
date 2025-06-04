@@ -24,3 +24,8 @@ const handleLoadComponent = async (href, script) => {
 		}
 	}
 };
+const handleLoadDOM = async (processes) => {
+	for (const process of processes) {
+		await process();
+	}
+};
