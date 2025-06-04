@@ -16,6 +16,7 @@
 	--color-alabaster: #fbfbfb;
 	--color-zumthor: #edf5ff;
 	--color-hoverdark: #252a42;
+	--color-meta: #20c5a8;
 
 	--tw-border-opacity: 1;
 
@@ -117,10 +118,16 @@ body {
 	line-height: 1.75rem;
 	font-weight: 600;
 }
-.banner-Nextjs {
+.text-metatitle2 {
+	font-size: 1.25rem;
+	line-height: 2rem;
+}
+.banner-Nextjs,
+.about-saas-startup {
 	position: relative;
 }
-.banner-Nextjs::before {
+.banner-Nextjs::before,
+.about-saas-startup::before {
 	content: "";
 	position: absolute;
 	bottom: 18%;
@@ -131,8 +138,12 @@ body {
 	opacity: 1;
 	z-index: -1;
 }
-.dark .banner-Nextjs::before {
+.dark .banner-Nextjs::before,
+.dark .about-saas-startup::before {
 	background-color: #46495a;
+}
+.border-stroke {
+	border-color: rgb(238 238 238 / var(--tw-border-opacity));
 }
 .border-y-stroke {
 	border-top-color: rgb(238 238 238 / var(--tw-border-opacity));
