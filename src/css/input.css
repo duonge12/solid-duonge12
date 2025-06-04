@@ -123,11 +123,13 @@ body {
 	line-height: 2rem;
 }
 .banner-Nextjs,
-.about-saas-startup {
+.about-saas-startup,
+.about-integration {
 	position: relative;
 }
 .banner-Nextjs::before,
-.about-saas-startup::before {
+.about-saas-startup::before,
+.about-integration::before {
 	content: "";
 	position: absolute;
 	bottom: 18%;
@@ -139,7 +141,8 @@ body {
 	z-index: -1;
 }
 .dark .banner-Nextjs::before,
-.dark .about-saas-startup::before {
+.dark .about-saas-startup::before,
+.dark .about-integration::before {
 	background-color: #46495a;
 }
 .border-stroke {
