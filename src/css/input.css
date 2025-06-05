@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @custom-variant dark (&:where(.dark, .dark *));
-@custom-variant down (&:where(.down, .down *));
-@custom-variant up (&:where(.up, .up *));
 @theme {
 	--breakpoint-md: 768px;
 	--breakpoint-lg: 1024px;
@@ -223,6 +221,19 @@ body {
 	border-top-color: rgb(45 47 64 / var(--tw-border-opacity));
 	border-bottom-color: rgb(45 47 64 / var(--tw-border-opacity));
 }
+.trust-number {
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+	font-weight: 700;
+}
+.trust-text {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+.dark .trust-dark-from-to {
+	background-color: #1c2136;
+}
+
 @media screen and (min-width: 768px) {
 	.tab-container .tab-menu-item {
 		width: auto;
@@ -292,5 +303,13 @@ body {
 	}
 	.tab-container .tab-menu-item {
 		padding: 1.25rem 3.375rem;
+	}
+	.trust-number {
+		font-size: 2.75rem;
+		line-height: 3.4375rem;
+	}
+	.trust-text {
+		font-size: 1.375rem;
+		line-height: 2.19rem;
 	}
 }
