@@ -21,7 +21,7 @@
 		/>
 		<title>Solid</title>
 	</head>
-	<body class="bg-white dark:bg-blacksection">
+	<body class="bg-white dark:bg-black dark">
 		<script src="js/loadComponent.js"></script>
 		<script>
 			handleLoadDOM([
@@ -36,6 +36,7 @@
 						"components/tab-feature.html",
 						"js/tab-feature.js",
 					),
+				() => handleLoadComponent("components/trust.html"),
 			]);
 		</script>
 	</body>
