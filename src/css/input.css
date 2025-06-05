@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @custom-variant dark (&:where(.dark, .dark *));
 @custom-variant down (&:where(.down, .down *));
 @custom-variant up (&:where(.up, .up *));
@@ -25,9 +26,25 @@
 html {
 	color: #757693;
 	line-height: 1.5;
+	font-family:
+		ui-sans-serif,
+		system-ui,
+		-apple-system,
+		BlinkMacSystemFont,
+		Segoe UI,
+		Roboto,
+		Helvetica Neue,
+		Arial,
+		Noto Sans,
+		sans-serif,
+		Apple Color Emoji,
+		Segoe UI Emoji,
+		Segoe UI Symbol,
+		Noto Color Emoji;
+	font-feature-settings: normal;
 }
 body {
-	font-family: "Inter", sans-serif;
+	font-family: Inter, sans-serif;
 	font-style: normal;
 	font-size: 16px;
 	line-height: 26px;
@@ -122,6 +139,53 @@ body {
 	font-size: 1.25rem;
 	line-height: 2rem;
 }
+.tab-title {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-weight: 500;
+}
+.tab-card-title {
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+	font-weight: 700;
+}
+.tab-card {
+	position: absolute;
+	background-color: inherit;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	opacity: 0;
+	transition: all 1s ease;
+	transform: scale(0.5);
+}
+.tab-card.selected {
+	opacity: 1;
+	transform: scale(1);
+}
+.tab-container .tab-menu-item {
+	display: flex;
+	position: relative;
+	width: 100%;
+	cursor: pointer;
+	align-items: center;
+	gap: 1rem;
+	border-bottom: 1px solid white;
+	padding: 0.5rem 1.5rem;
+}
+.tab-container .tab-menu-item.selected::before {
+	display: block;
+	content: "";
+	background-color: #006bff;
+	left: 0;
+	bottom: 0;
+	position: absolute;
+	height: 4px;
+	width: 100%;
+}
+.tab-container .tab-menu-item:last-child {
+	border: none;
+}
 .banner-Nextjs,
 .about-saas-startup,
 .about-integration {
@@ -159,7 +223,12 @@ body {
 	border-top-color: rgb(45 47 64 / var(--tw-border-opacity));
 	border-bottom-color: rgb(45 47 64 / var(--tw-border-opacity));
 }
-
+@media screen and (min-width: 768px) {
+	.tab-container .tab-menu-item {
+		width: auto;
+		border: none;
+	}
+}
 @media screen and (min-width: 1280px) {
 	.nav-container {
 		display: flex;
@@ -212,5 +281,16 @@ body {
 	.feature-card-title {
 		font-size: 1.625rem;
 		line-height: 2rem;
+	}
+	.tab-title {
+		font-size: 1rem;
+		line-height: 1.625rem;
+	}
+	.tab-card-title {
+		font-size: 2.5rem;
+		line-height: 3.25rem;
+	}
+	.tab-container .tab-menu-item {
+		padding: 1.25rem 3.375rem;
 	}
 }
