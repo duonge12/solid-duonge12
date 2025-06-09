@@ -233,7 +233,23 @@ body {
 .dark .trust-dark-from-to {
 	background-color: #1c2136;
 }
-
+.plus-icon {
+	display: none;
+}
+.frequently-ask-item.plus .plus-icon {
+	display: inline-block;
+}
+.frequently-ask-item.plus .minus-icon {
+	display: none;
+}
+.frequently-ask-item .frequently-ask-item-p {
+	max-height: 0px;
+	overflow: hidden;
+	transition: all 0.5s ease-in;
+}
+.frequently-ask-item.plus .frequently-ask-item-p {
+	max-height: 400px;
+}
 @media screen and (min-width: 768px) {
 	.tab-container .tab-menu-item {
 		width: auto;
