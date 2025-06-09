@@ -1,7 +1,7 @@
 const initFrequentlyAskComponent = () => {
-    const containers=document.querySelectorAll(".frequently-ask-item");
+	const containers = document.querySelectorAll(".frequently-ask-item");
 	const buttons = document.querySelectorAll(".frequently-ask-item >button");
-    console.log(buttons);
+	console.log(buttons);
 	buttons.forEach((button, selectedIndex) => {
 		button.addEventListener("click", () => {
 			containers.forEach((container, index) => {
@@ -9,7 +9,7 @@ const initFrequentlyAskComponent = () => {
 					container.classList.remove("plus");
 				}
 			});
-            containers[selectedIndex].classList.toggle('plus');
+			containers[selectedIndex].classList.toggle("plus");
 		});
 	});
 };
