@@ -19,10 +19,15 @@
 			rel="stylesheet"
 			href="css/index.css"
 		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
 		<title>Solid</title>
 	</head>
 
 	<body class="bg-white dark:bg-black dark">
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 		<script src="js/loadComponent.js"></script>
 		<script>
 			handleLoadDOM([
@@ -44,6 +49,11 @@
 					handleLoadComponent(
 						"components/frequently-ask.html",
 						"js/frequently-ask.js",
+					),
+				() =>
+					handleLoadComponent(
+						"components/testimonial.html",
+						"js/testimonial.js",
 					),
 				() => handleLoadComponent("components/footer.html"),
 			]);
