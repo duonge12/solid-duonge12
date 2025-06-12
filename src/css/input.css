@@ -16,6 +16,8 @@
 	--color-zumthor: #edf5ff;
 	--color-hoverdark: #252a42;
 	--color-meta: #20c5a8;
+	--color-manatee: #999aa1;
+	--color-waterloo: #757693;
 
 	--tw-border-opacity: 1;
 
@@ -264,6 +266,16 @@ body {
 	transform: translateX(0%);
 	transition: all 1s ease-in-out;
 }
+.pricing {
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+	font-weight: 700;
+}
+.month {
+	font-size: 1rem;
+	line-height: 1.625rem;
+	font-weight: 700;
+}
 @media screen and (min-width: 768px) {
 	.tab-container .tab-menu-item {
 		width: auto;
@@ -341,5 +353,9 @@ body {
 	.trust-text {
 		font-size: 1.375rem;
 		line-height: 2.19rem;
+	}
+	.pricing {
+		font-size: 2.75rem;
+		line-height: 3.4rem;
 	}
 }
