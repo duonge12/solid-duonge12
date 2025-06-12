@@ -260,6 +260,10 @@ body {
 	line-height: 32px;
 	font-weight: 500;
 }
+.slides {
+	transform: translateX(0%);
+	transition: all 1s ease-in-out;
+}
 @media screen and (min-width: 768px) {
 	.tab-container .tab-menu-item {
 		width: auto;
