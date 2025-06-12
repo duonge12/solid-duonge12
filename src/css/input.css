@@ -247,7 +247,7 @@ body {
 .frequently-ask-item .frequently-ask-item-p {
 	max-height: 0px;
 	overflow: hidden;
-	transition: all 0.5s ease-in;
+	transition: all 0s ease-in;
 }
 .frequently-ask-item.plus .frequently-ask-item-p {
 	max-height: 400px;
